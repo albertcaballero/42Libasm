@@ -1,26 +1,14 @@
-
 #include <stdio.h>
 #include <string.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <stdlib.h>
 
 extern int ft_strlen(char *c);
 extern char *ft_strcpy(char *c, char *s);
+extern int ft_strcmp(char *c, char *s);
+extern size_t ft_write(int ,char *, int);
 
 int main(void){
-	char str[] = "gasdfasdfasd";
-
-
-	// int i = strlen(str);
-    // int j = ft_strlen(str);
-    // printf("\tORIGINAL: %d || ASM: %d\n", i, j);
-
-
-
-	char tmp[100];
-    char tmp1[100];
-    char *ex;
-    char *ex1;
-    ex = strcpy(tmp, "Holiwiaaa");
-    printf("orig\tTMP: %s || EX: %s\n", tmp, ex);
-    ex1 = ft_strcpy(tmp1, "Holiwiaaa");
-    printf("mine\tTMP: %s || EX: %s\n", tmp1, ex1);
+	printf("\tORIGINAL: %ld || ASM: %ld\n", write(1, "holiwi", 6), ft_write(1, "holiwi", 6));
 }
