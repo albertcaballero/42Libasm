@@ -7,7 +7,7 @@ ASM := nasm -f elf64
 
 TMP := .obj/
 
-FUNCS = ft_strlen ft_strcpy ft_strcmp ft_write #ft_read  ft_strdup
+FUNCS = ft_strlen ft_strcpy ft_strcmp ft_write ft_read  ft_strdup
 
 SRC := $(addprefix src/,$(addsuffix .s,$(FUNCS)))
 OBJ := $(addprefix $(TMP),$(addsuffix .o,$(FUNCS)))
