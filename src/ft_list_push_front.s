@@ -1,10 +1,17 @@
+%include "struct.inc"
+extern ft_list_create_elm
+
 section .text
     global ft_list_push_front
 
 
-	;rdi-> list / rsi -> new
-	;[rdi] -> *data
-	;[rdi + 8] -> *next
+;rdi-> list / rsi -> data
 ft_list_push_front:
-	mov [rsi+8], [rdi]
-	mov [rdi], rsi
+	push rdi
+	mov rdi, rsi
+	call ft_list_create_elm
+	pop rdi
+
+	mov qword [rax + t_list.next], [rdi]
+	mov [rdi], rax
+	ret
