@@ -1,5 +1,6 @@
 %include "struct.inc"
 extern malloc
+extern __errno_location
 
 section .text
     global ft_list_create_elm

@@ -1,5 +1,3 @@
-# gcc -m32 -O3 -masm=intel -fno-omit-frame-pointer -S -o- source.c  -> transform C into assembly
-
 NAME := libasm.a
 OUTPUT := test
 
@@ -7,7 +5,7 @@ ASM := nasm -f elf64
 
 TMP := .obj/
 
-FUNCS = ft_strlen ft_strcpy ft_strcmp ft_write ft_read  ft_strdup
+FUNCS = ft_strlen ft_strcpy ft_strcmp ft_write ft_read  ft_strdup ft_list_size ft_list_push_front ft_list_create_elm
 
 SRC := $(addprefix src/,$(addsuffix .s,$(FUNCS)))
 OBJ := $(addprefix $(TMP),$(addsuffix .o,$(FUNCS)))

@@ -7,11 +7,20 @@ section .text
 
 ;rdi-> list / rsi -> data
 ft_list_push_front:
+    test rdi, rdi
+    jz finish
+
 	push rdi
 	mov rdi, rsi
 	call ft_list_create_elm
 	pop rdi
 
-	mov qword [rax + t_list.next], [rdi]
+    test rax, rax
+    jz finish
+
+    mov rdx, [rdi]
 	mov [rdi], rax
-	ret
+	mov [rax + t_list.next], rdx
+
+finish:
+    ret
