@@ -45,7 +45,7 @@ int main(void){
     {
         printf("=====STRCMP=====\n");
         char *str1 = "holaquetal";
-        char *str2 = "holAtal";
+        char *str2 = "hol";
         printf("original: %i, mine: %i\n", strcmp(str1, str2), ft_strcmp(str1, str2));
     }
     {

@@ -6,14 +6,15 @@ extern __errno_location
 section .text
     global ft_strdup
 
+;rdi -> str
 ft_strdup:
 	call ft_strlen
 	push rdi
 	inc rax
 	mov rdi, rax
 	call malloc wrt ..plt
-	cmp rax, 0
-	jl malloc_error
+	test rax,rax
+	jz malloc_error
 
 	pop rsi
 	mov rdi, rax

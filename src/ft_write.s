@@ -12,7 +12,7 @@ ft_write:
 
 error:
 	neg rax
-	mov rcx, rax
+	mov rcx, rax            ;rcx as tmp variable
 	call __errno_location wrt ..plt
 	mov [rax], rcx
 	mov rax, -1

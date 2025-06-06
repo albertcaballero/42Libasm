@@ -3,6 +3,7 @@ section .text
 
 ft_strcpy:
     xor rax,rax
+
 ;rdi = dst, rsi = src
 loop:
 	mov dl, [rsi + rax]

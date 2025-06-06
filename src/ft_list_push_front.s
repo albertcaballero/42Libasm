@@ -4,7 +4,6 @@ extern ft_list_create_elm
 section .text
     global ft_list_push_front
 
-
 ;rdi-> list / rsi -> data
 ft_list_push_front:
     test rdi, rdi
@@ -15,12 +14,12 @@ ft_list_push_front:
 	call ft_list_create_elm
 	pop rdi
 
-    test rax, rax
+    test rax, rax    ;check ft_list_create_elm (node) return
     jz finish
 
-    mov rdx, [rdi]
-	mov [rdi], rax
-	mov [rax + t_list.next], rdx
+    mov rdx, [rdi]      ;tmp = *list
+	mov [rdi], rax      ; *list = node
+	mov [rax + t_list.next], rdx  ;node->next = tmp
 
 finish:
     ret
